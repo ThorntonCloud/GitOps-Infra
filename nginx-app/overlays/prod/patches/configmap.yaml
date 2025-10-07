@@ -140,7 +140,7 @@ data:
                 <h1>🚀 Deployment Info!</h1>
                 <div class="status-badge">
                     <span class="status-indicator"></span>
-                    prod
+                    production
                 </div>
             </div>
 
