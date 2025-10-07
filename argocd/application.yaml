@@ -5,15 +5,15 @@ metadata:
   namespace: argocd
 spec:
   project: default
+  source:
+    repoURL: https://github.com/ThorntonCloud/GitOps-Infra.git
+    targetRevision: main
+    path: argocd/appsets
+  destination:
+    name: ''
+    namespace: argocd
+    server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       prune: false
       selfHeal: true
-   destination:
-     name: ''
-     namespace: argocd
-     server: https://kubernetes.default.svc
-   source:
-     repoURL: https://github.com/ThorntonCloud/GitOps-Infra.git
-     targetRevision: main
-     path: argocd/appsets
