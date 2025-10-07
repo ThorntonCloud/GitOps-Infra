@@ -19,6 +19,9 @@ patches:
   - path: patches/service.yaml
     target:
       kind: Service
+  - path: patches/configmap.yaml
+    target:
+      kind: ConfigMap
 
 namePrefix: prod-
 

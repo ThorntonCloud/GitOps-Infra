@@ -41,3 +41,11 @@ spec:
               port: http
             initialDelaySeconds: 5
             periodSeconds: 5
+          volumeMounts:
+          - name: html-content
+            mountPath: /usr/share/nginx/html
+            readOnly: true
+      volumes:
+      - name: html-content
+        configMap:
+          name: nginx-app-html

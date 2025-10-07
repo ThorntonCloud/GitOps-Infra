@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - service.yaml
   - deployment.yaml
+  - configmap.yaml
 
 labels:
   - includeSelectors: true
@@ -11,3 +12,6 @@ labels:
       app.kubernetes.io/managed-by: kustomize
       app.kubernetes.io/part-of: nginx-app
 
+configMapGenerator:
+  - name: nginx-app-html
+    behavior: create
