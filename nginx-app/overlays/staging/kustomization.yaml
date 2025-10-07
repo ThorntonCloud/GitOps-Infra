@@ -1,0 +1,35 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: staging
+
+resources:
+  - namespace.yaml
+  - ../../base
+
+labels:
+  - pairs:
+      environment: staging
+      tier: pre-production
+
+patches:
+  - path: patches/deployment.yaml
+    target:
+      kind: Deployment
+  - path: patches/service.yaml
+    target:
+      kind: Service
+
+namePrefix: staging-
+
+commonAnnotations:
+  deployed-by: argocd
+  environment: staging
+
+images:
+  - name: thorntoncloud/nginx-gitops
+    newTag: staging
+
+replicas:
+  - name: nginx-app
+    count: 2
