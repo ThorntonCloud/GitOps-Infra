@@ -2,7 +2,7 @@
 
 Kubernetes deployment manifests and ArgoCD configurations for the GitOps demo application. This repository implements the **App of Apps** pattern with Kustomize overlays for multi-environment deployments.
 
-## 🎯 Purpose
+## Purpose
 
 This repository contains the **deployment configuration** for the [GitOps-App](https://github.com/ThorntonCloud/GitOps-App) nginx application. It demonstrates GitOps best practices by separating application source code from deployment manifests, enabling:
 
@@ -11,7 +11,7 @@ This repository contains the **deployment configuration** for the [GitOps-App](h
 - **Automated Sync**: ArgoCD continuously reconciles desired state
 - **Audit Trail**: Complete history of infrastructure changes via Git
 
-## 🏗️ Repository Structure
+## Repository Structure
 
 ```
 .
@@ -53,7 +53,7 @@ This repository contains the **deployment configuration** for the [GitOps-App](h
                 └── configmap.yaml
 ```
 
-## 🔄 App of Apps Pattern
+## App of Apps Pattern
 
 This repository implements ArgoCD's **App of Apps** pattern for managing multiple applications and environments:
 
@@ -95,7 +95,7 @@ This repository implements ArgoCD's **App of Apps** pattern for managing multipl
 - **Consistent Deployments**: Same base manifests, different configurations
 - **Easy Scaling**: Add new environments by updating the list generator
 
-## 🌍 Environment Configurations
+## Environment Configurations
 
 | Environment | Namespace | Image Tag | Replicas | Resources | Service Type | Auto-Sync | Use Case |
 |-------------|-----------|-----------|----------|-----------|--------------|-----------|----------|
@@ -150,7 +150,7 @@ Production Cluster
 └── Namespace: prod
 ```
 
-## 🚀 GitOps Workflow
+## GitOps Workflow
 
 ### Complete Deployment Pipeline
 
@@ -211,7 +211,7 @@ Production Cluster
 └─────────────────────────────────────────────────────────────┘
 ```
 
-## 🔧 Kustomize Structure
+## Kustomize Structure
 
 ### Base Manifests
 
@@ -289,7 +289,7 @@ git push origin main
 
 4. **ArgoCD syncs automatically** (or manually via ArgoCD UI)
 
-## 🔍 ArgoCD Configuration
+## ArgoCD Configuration
 
 ### Parent Application (App of Apps)
 
@@ -346,7 +346,7 @@ template:
 | **prune** | Delete resources removed from Git | ✅ Enabled (ApplicationSet apps) |
 | **CreateNamespace** | Auto-create namespace if missing | ✅ Enabled |
 
-## 📊 Visibility
+## Visibility
 
 ### ArgoCD UI
 
@@ -389,7 +389,7 @@ git revert <commit-hash>
 git push origin main
 ```
 
-## 🔒 Security Considerations
+# Security Considerations
 
 ### Current Security Features
 
@@ -411,7 +411,7 @@ For production environments, consider:
 - **Network Policies**: Implement strict ingress/egress rules
 - **Pod Security Standards**: Enforce restricted pod security standards
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -454,7 +454,7 @@ kubectl get svc -n staging
 kubectl get svc -n prod
 ```
 
-## 🔧 Customization
+## Customization
 
 ### Adding a New Environment
 
@@ -495,7 +495,7 @@ git commit -m "feat: update deployment configuration"
 git push origin main
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Application Not Syncing
 
@@ -543,7 +543,7 @@ argocd app diff prod-nginx-app
 argocd app sync prod-nginx-app
 ```
 
-## 📚 Related Resources
+## Related Resources
 
 - **[GitOps-App Repository](https://github.com/ThorntonCloud/GitOps-App)** - Application source code and CI/CD
 - [ArgoCD Documentation](https://argo-cd.readthedocs.io/) - GitOps continuous delivery
@@ -551,7 +551,7 @@ argocd app sync prod-nginx-app
 - [ArgoCD ApplicationSet](https://argo-cd.readthedocs.io/en/stable/user-guide/application-set/) - Multi-environment management
 - [GitOps Principles](https://opengitops.dev/) - GitOps standards
 
-## 🤝 Contributing
+## Contributing
 
 This is a demonstration repository showing GitOps patterns and best practices.
 
